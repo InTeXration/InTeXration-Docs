@@ -10,7 +10,6 @@ Installing the full version of TeX Live is recommended. If you'll be running InT
 ### Node.JS
 
 Install NodeJS and the node package manager.
-
 ```bash
 $ sudo apt-get install nodejs
 $ sudo apt-get install npm
@@ -32,7 +31,6 @@ $ npm install forever -g
 ## Installing InTeXration Stack
 
 Create a new user called *InTeXration* without shell access and change the current directory to its home folder.
-
 ```bash
 $ sudo adduser --disabled-login --gecos 'InTeXration' intexration
 $ cd /home/intexration
@@ -41,19 +39,16 @@ $ cd /home/intexration
 ### InTeXration-Proxy
 
 Clone the InTeXration-Proxy Repository.
-
 ```bash
 $ git clone https://github.com/InTeXration/InTeXration-Proxy /home/intexration/InTeXration-Proxy
 ```
 
 Install the required node packages.
-
 ```bash
 $ npm install
 ```
 
 Run the proxy server detached with forever.
-
 ```bash
 $ forever app.js &
 ```
@@ -61,19 +56,16 @@ $ forever app.js &
 ### InTeXration-Server
 
 Clone the InTeXration-Server Repository.
-
 ```bash
 $ git clone https://github.com/InTeXration/InTeXration-Server.git /home/intexration/InTeXration-Server
 ```
 
 Install the required node packages.
-
 ```bash
 $ npm install
 ```
 
 Run the InTeXration server detached with forever.
-
 ```bash
 $ forever bin/www &
 ```
@@ -81,7 +73,22 @@ $ forever bin/www &
 ### InTeXration-App
 
 Clone the InTeXration-App Repository.
-
 ```bash
 $ git clone https://github.com/InTeXration/InTeXration-App.git /home/intexration/InTeXration-App
+```
+
+Install the required node packages.
+```bash
+$ npm install
+```
+
+Install Bower and the required web packages.
+```bash
+$ npm install -g bower
+$ bower install
+```
+
+Link the Front-End with the Server
+```bash
+ln -s /home/intexration/InTeXration-App /home/intexration/InTeXration-Server/front
 ```
