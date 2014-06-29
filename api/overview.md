@@ -1,16 +1,16 @@
 # API
 
-## Blueprints
+## Hooks
 Both call return a list of blueprint objects.
 
-### All Blueprints
+### All Hooks
 ```
-/blueprint/:owner/:repo
+/hook/:owner/:repo
 ```
 
-### Blueprints by Owner & Repo
+### Hooks by Owner & Repo
 ```
-/blueprint/:owner/:repo
+/hook/:owner/:repo
 ```
 ```javascript
 [{
